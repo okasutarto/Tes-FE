@@ -1,5 +1,8 @@
 <script>
 
+export default {
+
+}
 </script>
 
 <template>
@@ -34,7 +37,7 @@
               </svg></button>
           </div>
           <div class=" collapse-content text-slate-500">
-            <router-link to="/addProduct">
+            <router-link to="/addSales">
               <p class="mb-1">Add</p>
             </router-link>
             <router-link to="/editProduct">
@@ -61,12 +64,14 @@
           </div>
           <div class="collapse-content font text-slate-500">
             <p class="mb-1">User</p>
-            <p>Product</p>
+            <router-link to="/products">
+              <p class="mb-1">Product</p>
+            </router-link>
           </div>
         </div>
       </li>
       <li class="mt-5 px-4 mb-4">
-        <router-link to="/"><button
+        <router-link to="/report"><button
             class="text-white bg-blue-500 hover:bg-blue-800 font-sm rounded-lg px-4 py-2.5 text-center inline-flex items-center w-48"
             type="button" data-dropdown-toggle="dropdown"><span class="material-symbols-outlined mr-2">
               summarize

@@ -10,7 +10,8 @@ export const useMainStore = defineStore('main', {
       adidasSales: [], // total kuantitas penjualan produk adidas 3 bulan terakhir
       pumaSales: [], // total kuantitas penjualan produk puma 3 bulan terakhir
       totalSales: [], // total kuantitas terjual * harga produk
-      sales: []
+      sales: [],
+      products: [],
     }
   },
   actions: {
@@ -29,7 +30,7 @@ export const useMainStore = defineStore('main', {
     async getSales3Month() {
       try {
         const response = await axios.get(`${baseUrl}/salesLastThreeMonth`)
-        console.log(response.data, '<<< sales');
+        // console.log(response.data, '<<< sales');
         this.totalSales3Month = response.data.map(s => {
           return s.quantity
         })
@@ -37,7 +38,7 @@ export const useMainStore = defineStore('main', {
           return s.name
         })
         this.totalSales = response.data
-        console.log(this.totalSales, '<<<< 3');
+        // console.log(this.totalSales, '<<<< 3');
       } catch (error) {
         console.log(err);
       }
@@ -63,7 +64,7 @@ export const useMainStore = defineStore('main', {
           price,
           quantity
         })
-        console.log(response, '<<<<<');
+        // console.log(response, '<<<<<');
       } catch (err) {
         console.log(err);
       }
@@ -72,9 +73,53 @@ export const useMainStore = defineStore('main', {
     async getSales() {
       try {
         const response = await axios.get(`${baseUrl}/sales`)
-        console.log(response.data, '<<< sales');
+        // console.log(response.data, '<<< sales');
         this.sales = response.data
       } catch (error) {
+        console.log(err);
+      }
+    },
+
+    async deleteSales(id) {
+      try {
+        const response = await axios.delete(`${baseUrl}/sales/${id}`)
+        this.getSales()
+        console.log(response);
+      } catch (err) {
+        console.log(err);
+      }
+    },
+
+    async getProducts() {
+      try {
+        const response = await axios.get(`${baseUrl}/products`)
+        console.log(response.data, '<<< products');
+        this.products = response.data
+      } catch (err) {
+        console.log(err);
+      }
+    },
+
+    async addProduct(name, price, stock) {
+      try {
+        const response = await axios.post(`${baseUrl}/products`, {
+          name,
+          price,
+          stock
+        })
+        console.log(response.data, '<<<<< add');
+        this.getProducts()
+      } catch (err) {
+        console.log(err);
+      }
+    },
+
+    async deleteProduct(id) {
+      try {
+        const response = await axios.delete(`${baseUrl}/products/${id}`)
+        this.getProducts()
+        console.log(response.data);
+      } catch (err) {
         console.log(err);
       }
     }

@@ -9,12 +9,6 @@
   ],
   "sales": [
     {
-      "id": 1,
-      "name": "nike",
-      "price": 100,
-      "quantity": "20"
-    },
-    {
       "id": 2,
       "name": "adidas",
       "price": 80,
@@ -40,12 +34,6 @@
     },
     {
       "id": 6,
-      "name": "adidas",
-      "price": 70,
-      "quantity": "40"
-    },
-    {
-      "id": 7,
       "name": "adidas",
       "price": 70,
       "quantity": "40"

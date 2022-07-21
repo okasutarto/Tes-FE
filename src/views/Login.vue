@@ -1,7 +1,7 @@
 <template>
   <div class="py-6 mt-20 flex justify-center">
     <div class="bg-white w-full p-8 lg:w-1/3 shadow-lg">
-      <div class="w-36 text-center">
+      <div class="w-36 text-center ml-20">
         <img class=""
           src="https://media-exp1.licdn.com/dms/image/C510BAQGO67f6DVzRag/company-logo_200_200/0/1581326841035?e=2147483647&v=beta&t=xhHlyf_HgQUgdkT5kj5ecsyIDK1BVAnd8VDxHFYkSAU"
           alt="">

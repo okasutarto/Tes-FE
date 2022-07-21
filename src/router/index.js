@@ -4,7 +4,8 @@ import Dashboard from '../views/Dashboard.vue'
 import FormAdd from '../views/FormAdd.vue'
 import FormEdit from '../views/FormEdit.vue'
 import DeleteSales from '../views/DeleteSales.vue'
-
+import Products from '../views/Products.vue'
+import Report from '../views/Report.vue'
 
 const routes = [
   {
@@ -18,8 +19,8 @@ const routes = [
     component: Login
   },
   {
-    path: '/addProduct',
-    name: 'addProduct',
+    path: '/addSales',
+    name: 'addSales',
     component: FormAdd
   },
   {
@@ -31,6 +32,16 @@ const routes = [
     path: '/deleteSales',
     name: 'deleteSales',
     component: DeleteSales
+  },
+  {
+    path: '/products',
+    name: 'products',
+    component: Products
+  },
+  {
+    path: '/report',
+    name: 'report',
+    component: Report
   },
 ]
 
