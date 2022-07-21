@@ -26,8 +26,10 @@
           type="password">
       </div>
       <div class="mt-8">
-        <button class="bg-gray-700 text-white font-semibold py-2 px-4 w-full rounded hover:bg-gray-600">Sign
-          In</button>
+        <router-link to="/">
+          <button class="bg-gray-700 text-white font-semibold py-2 px-4 w-full rounded hover:bg-gray-600">Sign
+            In</button>
+        </router-link>
       </div>
     </div>
   </div>

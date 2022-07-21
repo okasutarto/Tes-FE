@@ -1,58 +1,35 @@
 <script>
-import { Bar } from 'vue-chartjs'
-import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
-
-ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+import PieChart from '../components/PieChart.vue'
+import Graph from '../components/Graph.vue'
+import Sidebar from '../components/Sidebar.vue'
+import Summary from '../components/Summary.vue'
+import { mapActions } from 'pinia'
+import { useMainStore } from '../stores'
 
 export default {
-  name: 'BarChart',
-  components: { Bar },
-  props: {
-    chartId: {
-      type: String,
-      default: 'bar-chart'
-    },
-    datasetIdKey: {
-      type: String,
-      default: 'label'
-    },
-    width: {
-      type: Number,
-      default: 400
-    },
-    height: {
-      type: Number,
-      default: 400
-    },
-    cssClasses: {
-      default: '',
-      type: String
-    },
-    styles: {
-      type: Object,
-      default: () => { }
-    },
-    plugins: {
-      type: Object,
-      default: () => { }
-    }
+  components: {
+    PieChart,
+    Graph,
+    Sidebar,
+    Summary
   },
-  data() {
-    return {
-      chartData: {
-        labels: ['January', 'February', 'March'],
-        datasets: [{ data: [40, 20, 12] }]
-      },
-      chartOptions: {
-        responsive: true
-      }
-    }
-  }
+  methods: {
+    ...mapActions(useMainStore, ['getSales3Month', 'getSalesPerMonth']),
+  },
+  created() {
+    this.getSales3Month()
+    this.getSalesPerMonth()
+  },
 }
 </script>
 
 <template>
-  <p class="test-6xl">Tes</p>
-  <Bar :chart-options="chartOptions" :chart-data="chartData" :chart-id="chartId" :dataset-id-key="datasetIdKey"
-    :plugins="plugins" :css-classes="cssClasses" :styles="styles" :width="width" :height="height" />
+  <div class="flex">
+    <Sidebar />
+    <div class="bg-white text-center px-2 my-5 ml-5 rounded-lg">
+      <PieChart /> <br>
+      <Graph />
+      <Summary />
+    </div>
+  </div>
 </template>

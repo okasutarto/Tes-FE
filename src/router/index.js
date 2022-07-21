@@ -3,7 +3,7 @@ import Login from '../views/Login.vue'
 import Dashboard from '../views/Dashboard.vue'
 import FormAdd from '../views/FormAdd.vue'
 import FormEdit from '../views/FormEdit.vue'
-import DeleteProduct from '../views/DeleteProduct.vue'
+import DeleteSales from '../views/DeleteSales.vue'
 
 
 const routes = [
@@ -28,9 +28,9 @@ const routes = [
     component: FormEdit
   },
   {
-    path: '/deleteProduct',
-    name: 'deleteProduct',
-    component: DeleteProduct
+    path: '/deleteSales',
+    name: 'deleteSales',
+    component: DeleteSales
   },
 ]
 
