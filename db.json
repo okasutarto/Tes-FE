@@ -63,6 +63,12 @@
       "name": "puma",
       "price": 70,
       "stock": "40"
+    },
+    {
+      "name": "tes",
+      "price": 78,
+      "stock": 45,
+      "id": 4
     }
   ],
   "salesLastThreeMonth": [

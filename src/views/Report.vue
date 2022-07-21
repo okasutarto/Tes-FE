@@ -34,34 +34,36 @@ export default {
 <template>
   <div class="flex">
     <Sidebar />
-    <div class="bg-white text-center px-2 my-5 ml-5 rounded-lg">
-      <div class="m-20 mx-20">
-        <div class="bg-white">
-          <table class="table w-full bg-white">
-            <!-- head -->
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Price</th>
-                <th>quantity</th>
-                <th>Total Sales</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="item in sales" :key="item.id">
-                <td>{{ item.name }}</td>
-                <td>{{ item.price }}</td>
-                <td>{{ item.quantity }}</td>
-                <td>{{ this.total(item.quantity, item.price) }}</td>
-              </tr>
-              <tr>
-                <th>Total</th>
-                <th></th>
-                <th></th>
-                <th>{{ this.sumSales() }}</th>
-              </tr>
-            </tbody>
-          </table>
+    <div class="flex justify-center mr-5 w-full">
+      <div class="bg-white text-center px-2 my-5 ml-5 rounded-lg w-full">
+        <div class="m-20 mx-20">
+          <div class="bg-white">
+            <table class="table w-full bg-white">
+              <!-- head -->
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>quantity</th>
+                  <th>Total Sales</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="item in sales" :key="item.id">
+                  <td>{{ item.name }}</td>
+                  <td>{{ item.price }}</td>
+                  <td>{{ item.quantity }}</td>
+                  <td>{{ this.total(item.quantity, item.price) }}</td>
+                </tr>
+                <tr>
+                  <th>Total</th>
+                  <th></th>
+                  <th></th>
+                  <th>{{ this.sumSales() }}</th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

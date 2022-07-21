@@ -40,9 +40,6 @@ export default {
             <router-link to="/addSales">
               <p class="mb-1">Add</p>
             </router-link>
-            <router-link to="/editProduct">
-              <p class="mb-1">Edit</p>
-            </router-link>
             <router-link to="/deleteSales">
               <p>Delete</p>
             </router-link>
@@ -63,7 +60,6 @@ export default {
               </svg></button>
           </div>
           <div class="collapse-content font text-slate-500">
-            <p class="mb-1">User</p>
             <router-link to="/products">
               <p class="mb-1">Product</p>
             </router-link>

@@ -26,10 +26,12 @@ export default {
 <template>
   <div class="flex">
     <Sidebar />
-    <div class="bg-white text-center px-2 my-5 ml-5 rounded-lg">
-      <PieChart /> <br>
-      <Graph />
-      <Summary />
+    <div class="flex justify-center mr-5 w-full">
+      <div class="bg-white text-center px-2 my-5 ml-5 rounded-lg w-full">
+        <PieChart /> <br>
+        <Graph />
+        <Summary />
+      </div>
     </div>
   </div>
 </template>

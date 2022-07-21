@@ -52,7 +52,7 @@ export default {
 </script>
 
 <template>
-  <div style="width: 600px; height: 400px;">
+  <div class="flex ml-52 mt-8" style="width: 600px; height: 400px;">
     <canvas id="myChart"></canvas>
   </div>
 </template>
